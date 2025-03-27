@@ -63,7 +63,8 @@ app.listen(port, ()=> {
 });
 
 app.post("/verifyme",async (req,res) => {
-    const {whatsappNumber, verificationCode} = req.body;
+    try{
+        const {whatsappNumber, verificationCode} = req.body;
     let newPair = new Pair({
         whatsappNumber: whatsappNumber,
         verificationCode:verificationCode
@@ -71,4 +72,7 @@ app.post("/verifyme",async (req,res) => {
     newPair.save().then(res => {console.log(res)});
     await sendWhatsAppMessage(whatsappNumber, verificationCode);
     res.json({newPair});
+    }catch(err) {
+        res.send("ERROR ");
+    }
 });

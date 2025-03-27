@@ -20,8 +20,9 @@
                      <label for="whatsappNumber" class="form-label">Enter Whatsapp Number</label>
                      <input name="whatsappNumber" class="form-control col-lg-6 col-md-5 col-sm-10" type="number" max="9999999999" min="6000000000" required>
                      <div class="invalid-feedback">Invalid Requiest</div>
+                     <div class="valid-feedback">Please wait this will take few seconds.</div>
                  </div>
-                 <button class="btn btn-primary number-btn" style="background-color: #7431F9; border: none;">
+                 <button class="btn btn-primary main-btn" style="background-color: #7431F9; border: none;">
                     Submit
                  </button>
              </form>
@@ -31,7 +32,7 @@
        </div>
     </div>
     <script>
-        const btn = document.querySelector(".number-btn");
+        const btn = document.querySelector(".main-btn");
         const feedback = document.querySelector(".invalid-feeback");
         btn.addEventListener("click",()=> {
             btn.innerHTML =  `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
